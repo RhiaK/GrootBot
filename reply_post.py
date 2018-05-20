@@ -16,14 +16,14 @@ else:
 		posts_replied_to = posts_replied_to.split('\n')
 		posts_replied_to = list(filter(None, posts_replied_to))
 #get top 5 values from the subreddit
-subreddit = reddit.subreddit('pythonforengineers')
+subreddit = reddit.subreddit('Groot')
 for submission in subreddit.hot(limit=5):
 #if bot has not replied to the post before
 	if submission.id not in posts_replied_to:
 #case insesitive search
-		if re.search("i love python", submission.title, re.IGNORECASE):
+		if re.search("groot", submission.title, re.IGNORECASE):
 #reply to the post
-			submission.reply("Botty bot says: Me too!!!!")
+			submission.reply("I love Groot, he is the best!")
 			print("Bot replying to : ", submission.title)
 #store current id in list
 			posts_replied_to.append(submission.id)
